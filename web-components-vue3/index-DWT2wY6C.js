@@ -16,7 +16,7 @@ const d = { class: "title-wrap" }, p = { class: "title" }, c = /* @__PURE__ */ s
       o(t.$slots, "default", {}, void 0, !0)
     ], 64));
   }
-}), g = /* @__PURE__ */ i(c, [["__scopeId", "data-v-925a6599"]]);
+}), g = /* @__PURE__ */ i(c, [["__scopeId", "data-v-62aad8b1"]]);
 export {
   g as default
 };

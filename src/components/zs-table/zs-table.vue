@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type { TooltipInstance } from 'element-plus'
-import ZsEmpty from '../zs-empty/index.vue'
+import ZsEmpty from '../zs-empty/zs-empty.vue'
 
 const table = ref()
 const tooltipOptions: Partial<TooltipInstance> = {

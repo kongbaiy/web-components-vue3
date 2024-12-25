@@ -1,7 +1,7 @@
-import { defineComponent as y, ref as l, onMounted as R, onBeforeUnmount as E, openBlock as g, createElementBlock as k, normalizeStyle as L, createElementVNode as a, renderSlot as M } from "vue";
-import { _ as x } from "./_plugin-vue_export-helper-CHgC5LLL.js";
-const I = /* @__PURE__ */ y({
-  __name: "index",
+import { defineComponent as y, ref as l, onMounted as R, onBeforeUnmount as E, openBlock as g, createElementBlock as k, normalizeStyle as I, createElementVNode as a, renderSlot as L } from "vue";
+import { _ as M } from "./_plugin-vue_export-helper-CHgC5LLL.js";
+const x = /* @__PURE__ */ y({
+  __name: "zs-scroll-intermittent",
   props: {
     delay: { default: 5e3 },
     height: {}
@@ -10,14 +10,14 @@ const I = /* @__PURE__ */ y({
     const h = p, n = l(), c = l(), i = l(), u = l(), r = l(1);
     let o;
     R(() => {
-      n.value && (d(), n.value.addEventListener("mouseenter", f), n.value.addEventListener("mouseleave", v));
+      n.value && (d(), n.value.addEventListener("mouseenter", v), n.value.addEventListener("mouseleave", f));
     }), E(() => {
-      clearInterval(o), o = null, n.value.removeEventListener("mouseenter", f), n.value.removeEventListener("mouseleave", v);
+      clearInterval(o), o = null, n.value.removeEventListener("mouseenter", v), n.value.removeEventListener("mouseleave", f);
     });
-    function f() {
+    function v() {
       clearInterval(o), o = null;
     }
-    function v() {
+    function f() {
       d();
     }
     function d() {
@@ -34,7 +34,7 @@ const I = /* @__PURE__ */ y({
     return (e, t) => (g(), k("div", {
       ref_key: "containerRef",
       ref: n,
-      style: L({ height: e.height }),
+      style: I({ height: e.height }),
       class: "scroll-intermittent"
     }, [
       a("div", {
@@ -46,7 +46,7 @@ const I = /* @__PURE__ */ y({
           ref: c,
           class: "content"
         }, [
-          M(e.$slots, "default", {}, void 0, !0)
+          L(e.$slots, "default", {}, void 0, !0)
         ], 512),
         a("div", {
           ref_key: "cloneContentRef",
@@ -55,7 +55,7 @@ const I = /* @__PURE__ */ y({
       ], 512)
     ], 4));
   }
-}), H = /* @__PURE__ */ x(I, [["__scopeId", "data-v-d11f62fc"]]);
+}), C = /* @__PURE__ */ M(x, [["__scopeId", "data-v-882a0c4c"]]);
 export {
-  H as default
+  C as default
 };

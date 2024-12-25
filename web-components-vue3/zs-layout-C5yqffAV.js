@@ -1,12 +1,12 @@
-import { u as d, _ as p, w as N, l as b } from "./base-KIYEtT4d.js";
-import V from "./index--tCyYWAb.js";
-import { E as z } from "./el-scrollbar-CJq4fSjm.js";
-import H from "./index-D2gAaZzw.js";
-import { defineComponent as n, useSlots as K, computed as y, openBlock as u, createElementBlock as f, normalizeClass as m, unref as o, renderSlot as _, normalizeStyle as g, resolveComponent as A, createBlock as F, withCtx as i, createVNode as a, createElementVNode as $ } from "vue";
+import { u as d, _ as p, w as B, l as y } from "./base-KIYEtT4d.js";
+import N from "./zs-breadcrumb-CFVIQuEi.js";
+import { E as V } from "./el-scrollbar-CJq4fSjm.js";
+import H from "./zs-menu-C8HlPOI-.js";
+import { defineComponent as o, useSlots as K, computed as b, openBlock as u, createElementBlock as f, normalizeClass as m, unref as n, renderSlot as _, normalizeStyle as g, resolveComponent as A, createBlock as F, withCtx as i, createVNode as a, createElementVNode as $ } from "vue";
 import { _ as I } from "./_plugin-vue_export-helper-CHgC5LLL.js";
-const M = n({
+const M = o({
   name: "ElContainer"
-}), j = /* @__PURE__ */ n({
+}), j = /* @__PURE__ */ o({
   ...M,
   props: {
     direction: {
@@ -14,22 +14,22 @@ const M = n({
     }
   },
   setup(r) {
-    const e = r, t = K(), s = d("container"), l = y(() => e.direction === "vertical" ? !0 : e.direction === "horizontal" ? !1 : t && t.default ? t.default().some((h) => {
+    const e = r, t = K(), s = d("container"), l = b(() => e.direction === "vertical" ? !0 : e.direction === "horizontal" ? !1 : t && t.default ? t.default().some((h) => {
       const v = h.type.name;
       return v === "ElHeader" || v === "ElFooter";
     }) : !1);
     return (c, h) => (u(), f("section", {
-      class: m([o(s).b(), o(s).is("vertical", o(l))])
+      class: m([n(s).b(), n(s).is("vertical", n(l))])
     }, [
       _(c.$slots, "default")
     ], 2));
   }
 });
-var q = /* @__PURE__ */ p(j, [["__file", "container.vue"]]);
-const D = n({
+var L = /* @__PURE__ */ p(j, [["__file", "container.vue"]]);
+const q = o({
   name: "ElAside"
-}), G = /* @__PURE__ */ n({
-  ...D,
+}), D = /* @__PURE__ */ o({
+  ...q,
   props: {
     width: {
       type: String,
@@ -37,20 +37,20 @@ const D = n({
     }
   },
   setup(r) {
-    const e = r, t = d("aside"), s = y(() => e.width ? t.cssVarBlock({ width: e.width }) : {});
+    const e = r, t = d("aside"), s = b(() => e.width ? t.cssVarBlock({ width: e.width }) : {});
     return (l, c) => (u(), f("aside", {
-      class: m(o(t).b()),
-      style: g(o(s))
+      class: m(n(t).b()),
+      style: g(n(s))
     }, [
       _(l.$slots, "default")
     ], 6));
   }
 });
-var E = /* @__PURE__ */ p(G, [["__file", "aside.vue"]]);
-const J = n({
+var E = /* @__PURE__ */ p(D, [["__file", "aside.vue"]]);
+const G = o({
   name: "ElFooter"
-}), L = /* @__PURE__ */ n({
-  ...J,
+}), J = /* @__PURE__ */ o({
+  ...G,
   props: {
     height: {
       type: String,
@@ -58,19 +58,19 @@ const J = n({
     }
   },
   setup(r) {
-    const e = r, t = d("footer"), s = y(() => e.height ? t.cssVarBlock({ height: e.height }) : {});
+    const e = r, t = d("footer"), s = b(() => e.height ? t.cssVarBlock({ height: e.height }) : {});
     return (l, c) => (u(), f("footer", {
-      class: m(o(t).b()),
-      style: g(o(s))
+      class: m(n(t).b()),
+      style: g(n(s))
     }, [
       _(l.$slots, "default")
     ], 6));
   }
 });
-var x = /* @__PURE__ */ p(L, [["__file", "footer.vue"]]);
-const O = n({
+var S = /* @__PURE__ */ p(J, [["__file", "footer.vue"]]);
+const O = o({
   name: "ElHeader"
-}), P = /* @__PURE__ */ n({
+}), P = /* @__PURE__ */ o({
   ...O,
   props: {
     height: {
@@ -79,48 +79,48 @@ const O = n({
     }
   },
   setup(r) {
-    const e = r, t = d("header"), s = y(() => e.height ? t.cssVarBlock({
+    const e = r, t = d("header"), s = b(() => e.height ? t.cssVarBlock({
       height: e.height
     }) : {});
     return (l, c) => (u(), f("header", {
-      class: m(o(t).b()),
-      style: g(o(s))
+      class: m(n(t).b()),
+      style: g(n(s))
     }, [
       _(l.$slots, "default")
     ], 6));
   }
 });
-var S = /* @__PURE__ */ p(P, [["__file", "header.vue"]]);
-const Q = n({
+var z = /* @__PURE__ */ p(P, [["__file", "header.vue"]]);
+const Q = o({
   name: "ElMain"
-}), R = /* @__PURE__ */ n({
+}), R = /* @__PURE__ */ o({
   ...Q,
   setup(r) {
     const e = d("main");
     return (t, s) => (u(), f("main", {
-      class: m(o(e).b())
+      class: m(n(e).b())
     }, [
       _(t.$slots, "default")
     ], 2));
   }
 });
 var C = /* @__PURE__ */ p(R, [["__file", "main.vue"]]);
-const T = N(q, {
+const T = B(L, {
   Aside: E,
-  Footer: x,
-  Header: S,
+  Footer: S,
+  Header: z,
   Main: C
-}), U = b(E);
-b(x);
-const W = b(S), X = b(C), Y = { class: "h-full flex-v-center justify-between" }, Z = { class: "breadcrumb-shadow" }, ee = { class: "m5 h-[calc(100vh-128px)] bg-#fff" }, te = /* @__PURE__ */ n({
-  __name: "index",
+}), U = y(E);
+y(S);
+const W = y(z), X = y(C), Y = { class: "h-full flex-v-center justify-between" }, Z = { class: "breadcrumb-shadow" }, ee = { class: "m5 h-[calc(100vh-128px)] bg-#fff" }, te = /* @__PURE__ */ o({
+  __name: "zs-layout",
   props: {
     menuKey: {},
     style: {}
   },
   setup(r) {
     return (e, t) => {
-      const s = W, l = H, c = z, h = U, v = V, k = A("router-view"), B = X, w = T;
+      const s = W, l = H, c = V, h = U, v = N, k = A("router-view"), x = X, w = T;
       return u(), F(w, {
         style: g(e.style),
         class: "layout-container"
@@ -151,7 +151,7 @@ const W = b(S), X = b(C), Y = { class: "h-full flex-v-center justify-between" },
                   ]),
                   _: 1
                 }),
-                a(B, { class: "bg-#f7f9fd p0!" }, {
+                a(x, { class: "bg-#f7f9fd p0!" }, {
                   default: i(() => [
                     $("div", Z, [
                       a(v),
@@ -177,7 +177,7 @@ const W = b(S), X = b(C), Y = { class: "h-full flex-v-center justify-between" },
       }, 8, ["style"]);
     };
   }
-}), ce = /* @__PURE__ */ I(te, [["__scopeId", "data-v-6dfc179b"]]);
+}), ce = /* @__PURE__ */ I(te, [["__scopeId", "data-v-16bb855d"]]);
 export {
   ce as default
 };

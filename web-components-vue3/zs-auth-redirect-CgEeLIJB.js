@@ -3,7 +3,7 @@ import { s as c, v as i } from "./common-B4OVZMky.js";
 import { defineComponent as a, ref as u, onBeforeMount as d, onUnmounted as m, withDirectives as p, openBlock as _, createElementBlock as l, unref as f } from "vue";
 import { u as h, a as v } from "./vue-router-DkRpx4k-.js";
 const k = { class: "h-screen" }, C = /* @__PURE__ */ a({
-  __name: "index",
+  __name: "zs-auth-redirect",
   setup(I) {
     const s = h(), r = v(), o = u(!0);
     return d(() => {

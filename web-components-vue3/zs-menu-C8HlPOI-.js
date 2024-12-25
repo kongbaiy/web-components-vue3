@@ -8,10 +8,10 @@ import { E as P } from "./aria-CxTrhz24.js";
 import { T as nt } from "./index-Cj20c3-L.js";
 import { i as Q } from "./icon-C_1Mywq7.js";
 import { m as ot } from "./typescript-BpuhIBuJ.js";
-import { f as at } from "./vnode-BTm5VS2h.js";
-import { C as st } from "./index-BvVAGJky.js";
+import { f as st } from "./vnode-BTm5VS2h.js";
+import { C as at } from "./index-BvVAGJky.js";
 import { _ as lt } from "./_plugin-vue_export-helper-CHgC5LLL.js";
-const ae = function(e, o, ...n) {
+const se = function(e, o, ...n) {
   let i;
   o.includes("mouse") || o.includes("click") ? i = "MouseEvents" : o.includes("key") ? i = "KeyboardEvent" : i = "HTMLEvents";
   const t = document.createEvent(i);
@@ -61,11 +61,11 @@ const ae = function(e, o, ...n) {
     }, 16, ["name"]));
   }
 });
-var se = /* @__PURE__ */ re(it, [["__file", "collapse-transition.vue"]]);
-se.install = (e) => {
-  e.component(se.name, se);
+var ae = /* @__PURE__ */ re(it, [["__file", "collapse-transition.vue"]]);
+ae.install = (e) => {
+  e.component(ae.name, ae);
 };
-const rt = se;
+const rt = ae;
 let ct = class {
   constructor(o, n) {
     this.parent = o, this.domNode = n, this.subIndex = 0, this.subIndex = 0, this.init();
@@ -91,7 +91,7 @@ let ct = class {
             break;
           }
           case P.tab: {
-            ae(o, "mouseleave");
+            se(o, "mouseleave");
             break;
           }
           case P.enter:
@@ -118,15 +118,15 @@ let ct = class {
       let n = !1;
       switch (o.code) {
         case P.down: {
-          ae(o.currentTarget, "mouseenter"), this.submenu && this.submenu.gotoSubIndex(0), n = !0;
+          se(o.currentTarget, "mouseenter"), this.submenu && this.submenu.gotoSubIndex(0), n = !0;
           break;
         }
         case P.up: {
-          ae(o.currentTarget, "mouseenter"), this.submenu && this.submenu.gotoSubIndex(this.submenu.subMenuItems.length - 1), n = !0;
+          se(o.currentTarget, "mouseenter"), this.submenu && this.submenu.gotoSubIndex(this.submenu.subMenuItems.length - 1), n = !0;
           break;
         }
         case P.tab: {
-          ae(o.currentTarget, "mouseleave");
+          se(o.currentTarget, "mouseleave");
           break;
         }
         case P.enter:
@@ -291,14 +291,14 @@ var Ee = W({
     }), ee = g(() => {
       var u;
       return (u = e.showTimeout) != null ? u : l.props.showTimeout;
-    }), a = g(() => {
+    }), s = g(() => {
       var u;
       return (u = e.hideTimeout) != null ? u : l.props.hideTimeout;
-    }), s = () => {
+    }), a = () => {
       var u, p, _;
       return (_ = (p = (u = D.value) == null ? void 0 : u.popperRef) == null ? void 0 : p.popperInstanceRef) == null ? void 0 : _.destroy();
     }, r = (u) => {
-      u || s();
+      u || a();
     }, I = () => {
       l.props.menuTrigger === "hover" && l.props.mode === "horizontal" || l.props.collapse && l.props.mode === "vertical" || e.disabled || l.handleSubMenuClick({
         index: e.index,
@@ -322,7 +322,7 @@ var Ee = W({
         d.mouseInChild.value = !1;
         return;
       }
-      f == null || f(), d.mouseInChild.value = !1, { stop: f } = Te(() => !S.value && l.closeMenu(e.index, t.value), a.value), k.value && u && ((p = d.handleMouseleave) == null || p.call(d, !0));
+      f == null || f(), d.mouseInChild.value = !1, { stop: f } = Te(() => !S.value && l.closeMenu(e.index, t.value), s.value), k.value && u && ((p = d.handleMouseleave) == null || p.call(d, !0));
     };
     ne(() => l.props.collapse, (u) => r(!!u));
     {
@@ -499,72 +499,72 @@ var yt = W({
   emits: Mt,
   setup(e, { emit: o, slots: n, expose: i }) {
     const t = Ce(), y = t.appContext.config.globalProperties.$router, m = T(), M = N("menu"), l = N("sub-menu"), d = T(-1), v = T(e.defaultOpeneds && !e.collapse ? e.defaultOpeneds.slice(0) : []), c = T(e.defaultActive), f = T({}), S = T({}), V = g(() => e.mode === "horizontal" || e.mode === "vertical" && e.collapse), D = () => {
-      const a = c.value && f.value[c.value];
-      if (!a || e.mode === "horizontal" || e.collapse)
+      const s = c.value && f.value[c.value];
+      if (!s || e.mode === "horizontal" || e.collapse)
         return;
-      a.indexPath.forEach((r) => {
+      s.indexPath.forEach((r) => {
         const I = S.value[r];
         I && B(r, I.indexPath);
       });
-    }, B = (a, s) => {
-      v.value.includes(a) || (e.uniqueOpened && (v.value = v.value.filter((r) => s.includes(r))), v.value.push(a), o("open", a, s));
-    }, H = (a) => {
-      const s = v.value.indexOf(a);
-      s !== -1 && v.value.splice(s, 1);
-    }, h = (a, s) => {
-      H(a), o("close", a, s);
+    }, B = (s, a) => {
+      v.value.includes(s) || (e.uniqueOpened && (v.value = v.value.filter((r) => a.includes(r))), v.value.push(s), o("open", s, a));
+    }, H = (s) => {
+      const a = v.value.indexOf(s);
+      a !== -1 && v.value.splice(a, 1);
+    }, h = (s, a) => {
+      H(s), o("close", s, a);
     }, k = ({
-      index: a,
-      indexPath: s
+      index: s,
+      indexPath: a
     }) => {
-      v.value.includes(a) ? h(a, s) : B(a, s);
-    }, Z = (a) => {
+      v.value.includes(s) ? h(s, a) : B(s, a);
+    }, Z = (s) => {
       (e.mode === "horizontal" || e.collapse) && (v.value = []);
-      const { index: s, indexPath: r } = a;
-      if (!(Se(s) || Se(r)))
+      const { index: a, indexPath: r } = s;
+      if (!(Se(a) || Se(r)))
         if (e.router && y) {
-          const I = a.route || s, b = y.push(I).then((O) => (O || (c.value = s), O));
-          o("select", s, r, { index: s, indexPath: r, route: I }, b);
+          const I = s.route || a, b = y.push(I).then((O) => (O || (c.value = a), O));
+          o("select", a, r, { index: a, indexPath: r, route: I }, b);
         } else
-          c.value = s, o("select", s, r, { index: s, indexPath: r });
-    }, ce = (a) => {
-      const s = f.value, r = s[a] || c.value && s[c.value] || s[e.defaultActive];
-      r ? c.value = r.index : c.value = a;
-    }, $ = (a) => {
-      const s = getComputedStyle(a), r = Number.parseInt(s.marginLeft, 10), I = Number.parseInt(s.marginRight, 10);
-      return a.offsetWidth + r + I || 0;
+          c.value = a, o("select", a, r, { index: a, indexPath: r });
+    }, ce = (s) => {
+      const a = f.value, r = a[s] || c.value && a[c.value] || a[e.defaultActive];
+      r ? c.value = r.index : c.value = s;
+    }, $ = (s) => {
+      const a = getComputedStyle(s), r = Number.parseInt(a.marginLeft, 10), I = Number.parseInt(a.marginRight, 10);
+      return s.offsetWidth + r + I || 0;
     }, F = () => {
-      var a, s;
+      var s, a;
       if (!m.value)
         return -1;
-      const r = Array.from((s = (a = m.value) == null ? void 0 : a.childNodes) != null ? s : []).filter((A) => A.nodeName !== "#comment" && (A.nodeName !== "#text" || A.nodeValue)), I = 64, b = getComputedStyle(m.value), O = Number.parseInt(b.paddingLeft, 10), u = Number.parseInt(b.paddingRight, 10), p = m.value.clientWidth - O - u;
+      const r = Array.from((a = (s = m.value) == null ? void 0 : s.childNodes) != null ? a : []).filter((A) => A.nodeName !== "#comment" && (A.nodeName !== "#text" || A.nodeValue)), I = 64, b = getComputedStyle(m.value), O = Number.parseInt(b.paddingLeft, 10), u = Number.parseInt(b.paddingRight, 10), p = m.value.clientWidth - O - u;
       let _ = 0, E = 0;
       return r.forEach((A, De) => {
         _ += $(A), _ <= p - I && (E = De + 1);
       }), E === r.length ? -1 : E;
-    }, j = (a) => S.value[a].indexPath, G = (a, s = 33.34) => {
+    }, j = (s) => S.value[s].indexPath, G = (s, a = 33.34) => {
       let r;
       return () => {
         r && clearTimeout(r), r = setTimeout(() => {
-          a();
-        }, s);
+          s();
+        }, a);
       };
     };
     let J = !0;
     const Y = () => {
       if (d.value === F())
         return;
-      const a = () => {
+      const s = () => {
         d.value = -1, Qe(() => {
           d.value = F();
         });
       };
-      J ? a() : G(a)(), J = !1;
+      J ? s() : G(s)(), J = !1;
     };
-    ne(() => e.defaultActive, (a) => {
-      f.value[a] || (c.value = ""), ce(a);
-    }), ne(() => e.collapse, (a) => {
-      a && (v.value = []);
+    ne(() => e.defaultActive, (s) => {
+      f.value[s] || (c.value = ""), ce(s);
+    }), ne(() => e.collapse, (s) => {
+      s && (v.value = []);
     }), ne(f.value, D);
     let K;
     Je(() => {
@@ -572,9 +572,9 @@ var yt = W({
     });
     const ee = T(!1);
     {
-      const a = (b) => {
+      const s = (b) => {
         S.value[b.index] = b;
-      }, s = (b) => {
+      }, a = (b) => {
         delete S.value[b.index];
       };
       ge("rootMenu", xe({
@@ -590,15 +590,15 @@ var yt = W({
         removeMenuItem: (b) => {
           delete f.value[b.index];
         },
-        addSubMenu: a,
-        removeSubMenu: s,
+        addSubMenu: s,
+        removeSubMenu: a,
         openMenu: B,
         closeMenu: h,
         handleMenuItemClick: Z,
         handleSubMenuClick: k
       })), ge(`subMenu:${t.uid}`, {
-        addSubMenu: a,
-        removeSubMenu: s,
+        addSubMenu: s,
+        removeSubMenu: a,
         mouseInChild: ee,
         level: 0
       });
@@ -606,18 +606,18 @@ var yt = W({
     return ke(() => {
       e.mode === "horizontal" && new pt(t.vnode.el, M.namespace.value);
     }), i({
-      open: (s) => {
-        const { indexPath: r } = S.value[s];
+      open: (a) => {
+        const { indexPath: r } = S.value[a];
         r.forEach((I) => B(I, r));
       },
       close: H,
       handleResize: Y
     }), () => {
-      var a, s;
-      let r = (s = (a = n.default) == null ? void 0 : a.call(n)) != null ? s : [];
+      var s, a;
+      let r = (a = (s = n.default) == null ? void 0 : s.call(n)) != null ? a : [];
       const I = [];
       if (e.mode === "horizontal" && m.value) {
-        const p = at(r), _ = d.value === -1 ? p : p.slice(0, d.value), E = d.value === -1 ? [] : p.slice(d.value);
+        const p = st(r), _ = d.value === -1 ? p : p.slice(0, d.value), E = d.value === -1 ? [] : p.slice(d.value);
         E != null && E.length && e.ellipsis && (r = _, I.push(C(Ee, {
           index: "sub-menu-more",
           class: l.e("hide-arrow"),
@@ -633,7 +633,7 @@ var yt = W({
       }
       const b = Le(e, 0), O = e.closeOnClickOutside ? [
         [
-          st,
+          at,
           () => {
             v.value.length && (ee.value || (v.value.forEach((p) => o("close", p, j(p))), v.value = []));
           }
@@ -773,7 +773,7 @@ const wt = Ke(yt, {
 }), $t = _e(Re);
 _e(We);
 const Ot = _e(Ee), Pt = ["onClick"], Nt = /* @__PURE__ */ W({
-  __name: "index",
+  __name: "zs-menu",
   props: {
     menuKey: {}
   },
@@ -874,7 +874,7 @@ const Ot = _e(Ee), Pt = ["onClick"], Nt = /* @__PURE__ */ W({
       }, 8, ["defaultActive"]);
     };
   }
-}), Jt = /* @__PURE__ */ lt(Nt, [["__scopeId", "data-v-caca6c06"]]);
+}), Jt = /* @__PURE__ */ lt(Nt, [["__scopeId", "data-v-5ca750c1"]]);
 export {
   Jt as default
 };

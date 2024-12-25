@@ -1,5 +1,5 @@
-import { c as I, u as B, _ as x, d as w, E as N, w as M, l as T } from "./base-KIYEtT4d.js";
-import { defineComponent as _, ref as y, provide as A, onMounted as L, openBlock as o, createElementBlock as d, normalizeClass as b, unref as r, renderSlot as C, getCurrentInstance as R, inject as V, createElementVNode as j, createBlock as g, withCtx as h, resolveDynamicComponent as D, toDisplayString as E, watchEffect as K, createVNode as k, TransitionGroup as q, Fragment as $, renderList as z, createTextVNode as F } from "vue";
+import { c as I, u as B, _ as C, d as w, E as N, w as M, l as T } from "./base-KIYEtT4d.js";
+import { defineComponent as _, ref as y, provide as A, onMounted as L, openBlock as o, createElementBlock as m, normalizeClass as b, unref as r, renderSlot as E, getCurrentInstance as R, inject as V, createElementVNode as j, createBlock as g, withCtx as h, resolveDynamicComponent as z, toDisplayString as x, watchEffect as D, createVNode as k, TransitionGroup as K, Fragment as $, renderList as q, createTextVNode as F } from "vue";
 import { a as G, u as O } from "./vue-router-DkRpx4k-.js";
 import { i as H } from "./icon-C_1Mywq7.js";
 import { u as J } from "./index-BUVGpkNy.js";
@@ -18,22 +18,22 @@ const P = Symbol("breadcrumbKey"), U = I({
   ...X,
   props: U,
   setup(f) {
-    const c = f, { t: m } = J(), a = B("breadcrumb"), e = y();
+    const c = f, { t: d } = J(), a = B("breadcrumb"), e = y();
     return A(P, c), L(() => {
       const t = e.value.querySelectorAll(`.${a.e("item")}`);
       t.length && t[t.length - 1].setAttribute("aria-current", "page");
-    }), (t, l) => (o(), d("div", {
+    }), (t, l) => (o(), m("div", {
       ref_key: "breadcrumb",
       ref: e,
       class: b(r(a).b()),
-      "aria-label": r(m)("el.breadcrumb.label"),
+      "aria-label": r(d)("el.breadcrumb.label"),
       role: "navigation"
     }, [
-      C(t.$slots, "default")
+      E(t.$slots, "default")
     ], 10, W));
   }
 });
-var Z = /* @__PURE__ */ x(Y, [["__file", "breadcrumb.vue"]]);
+var Z = /* @__PURE__ */ C(Y, [["__file", "breadcrumb.vue"]]);
 const ee = I({
   to: {
     type: w([String, Object]),
@@ -46,12 +46,12 @@ const ee = I({
   ...te,
   props: ee,
   setup(f) {
-    const c = f, m = R(), a = V(P, void 0), e = B("breadcrumb"), t = m.appContext.config.globalProperties.$router, l = y(), i = () => {
+    const c = f, d = R(), a = V(P, void 0), e = B("breadcrumb"), t = d.appContext.config.globalProperties.$router, l = y(), i = () => {
       !c.to || !t || (c.replace ? t.replace(c.to) : t.push(c.to));
     };
     return (n, p) => {
       var s, u;
-      return o(), d("span", {
+      return o(), m("span", {
         class: b(r(e).e("item"))
       }, [
         j("span", {
@@ -61,33 +61,33 @@ const ee = I({
           role: "link",
           onClick: i
         }, [
-          C(n.$slots, "default")
+          E(n.$slots, "default")
         ], 2),
         (s = r(a)) != null && s.separatorIcon ? (o(), g(r(N), {
           key: 0,
           class: b(r(e).e("separator"))
         }, {
           default: h(() => [
-            (o(), g(D(r(a).separatorIcon)))
+            (o(), g(z(r(a).separatorIcon)))
           ]),
           _: 1
-        }, 8, ["class"])) : (o(), d("span", {
+        }, 8, ["class"])) : (o(), m("span", {
           key: 1,
           class: b(r(e).e("separator")),
           role: "presentation"
-        }, E((u = r(a)) == null ? void 0 : u.separator), 3))
+        }, x((u = r(a)) == null ? void 0 : u.separator), 3))
       ], 2);
     };
   }
 });
-var S = /* @__PURE__ */ x(re, [["__file", "breadcrumb-item.vue"]]);
+var S = /* @__PURE__ */ C(re, [["__file", "breadcrumb-item.vue"]]);
 const ae = M(Z, {
   BreadcrumbItem: S
 }), oe = T(S), ne = { class: "h-10 flex items-center bg-#fff px-3" }, se = /* @__PURE__ */ _({
-  __name: "index",
+  __name: "zs-breadcrumb",
   setup(f) {
-    const c = G(), m = O(), a = y([]);
-    return K(() => {
+    const c = G(), d = O(), a = y([]);
+    return D(() => {
       var n;
       const e = c.matched, t = e == null ? void 0 : e[e.length - 1], l = t.meta.activeMenu, i = [e[0]];
       if (l) {
@@ -105,24 +105,24 @@ const ae = M(Z, {
       );
     }), (e, t) => {
       const l = oe, i = ae;
-      return o(), d("div", ne, [
+      return o(), m("div", ne, [
         k(i, { separator: "/" }, {
           default: h(() => [
-            k(q, { name: "breadcrumb" }, {
+            k(K, { name: "breadcrumb" }, {
               default: h(() => [
-                (o(!0), d($, null, z(a.value, (n, p) => (o(), g(l, {
+                (o(!0), m($, null, q(a.value, (n, p) => (o(), g(l, {
                   key: n.path,
                   "data-path": n.path
                 }, {
                   default: h(() => {
                     var s;
                     return [
-                      p === a.value.length - 2 ? (o(), d("span", {
+                      p === a.value.length - 2 ? (o(), m("span", {
                         key: 0,
-                        onClick: t[0] || (t[0] = (u) => r(m).go(-1)),
+                        onClick: t[0] || (t[0] = (u) => r(d).go(-1)),
                         class: "go-back"
-                      }, "返回")) : (o(), d($, { key: 1 }, [
-                        F(E(e.$t((s = n.meta) == null ? void 0 : s.title)), 1)
+                      }, "返回")) : (o(), m($, { key: 1 }, [
+                        F(x(e.$t((s = n.meta) == null ? void 0 : s.title)), 1)
                       ], 64))
                     ];
                   }),
@@ -137,7 +137,7 @@ const ae = M(Z, {
       ]);
     };
   }
-}), me = /* @__PURE__ */ Q(se, [["__scopeId", "data-v-ab40b0cd"]]);
+}), de = /* @__PURE__ */ Q(se, [["__scopeId", "data-v-9ff59bee"]]);
 export {
-  me as default
+  de as default
 };

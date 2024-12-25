@@ -2253,7 +2253,7 @@ var ja = K({
   }
 });
 const Ua = ct(ja), uo = /* @__PURE__ */ K({
-  __name: "ks-pagination",
+  __name: "zs-pagination",
   props: {
     layout: { default: "total, prev, pager, next, jumper" }
   },
