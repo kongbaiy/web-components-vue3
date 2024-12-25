@@ -45,7 +45,7 @@ declare module 'vue' {
     ZsSliderVerify: typeof import('./../src/components/zs-slider-verify/zs-slider-verify.vue')['default']
     ZsSplitContainer: typeof import('./../src/components/zs-split-container/zs-split-container.vue')['default']
     ZsTable: typeof import('./../src/components/zs-table/zs-table.vue')['default']
-    ZsTitle: typeof import('./../src/components/zs-title/index.vue')['default']
+    ZsTitle: typeof import('./../src/components/zs-title/zs-title.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

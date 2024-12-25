@@ -86,7 +86,7 @@ export default defineConfig(({ mode }) => {
         ],
 
         build: {
-            outDir: 'web-components-vue3', //输出文件名称
+            outDir: 'dist', //输出文件名称
             lib: {
                 entry: './src/components/index.ts', //指定组件编译入口文件
                 name: 'webComponentsVue3',

@@ -7,8 +7,8 @@
   "license": "ISC",
   "description": "",
   "files": [
-    "web-components-vue3",
-    "components.d.ts"
+    "dist",
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
