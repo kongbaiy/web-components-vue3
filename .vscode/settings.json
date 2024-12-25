@@ -1,6 +1,13 @@
 {
     "cSpell.words": [
         "konbai",
-        "lightsoft"
+        "lightsoft",
+        "pinia",
+        "unocss",
+        "wechat"
+    ],
+    "i18n-ally.localesPaths": [
+        "src/locales",
+        "src/locales/lang"
     ]
 }
