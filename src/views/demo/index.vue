@@ -1,3 +1,5 @@
 <template>
-    <div>asda</div>
+    <zs-title text="title">
+        content
+    </zs-title>
 </template>

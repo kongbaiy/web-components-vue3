@@ -6,8 +6,6 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const ElMessage: typeof import('element-plus/es')['ElMessage']
-  const ElMessageBox: typeof import('element-plus/es')['ElMessageBox']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -48,7 +46,6 @@ declare global {
   const onServerPrefetch: typeof import('vue')['onServerPrefetch']
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
-  const pagination: typeof import('../src/hooks/use-query/index')['pagination']
   const provide: typeof import('vue')['provide']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
@@ -69,11 +66,8 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
-  const useDeleteConfirm: typeof import('../src/hooks/use-delete-confirm/index')['useDeleteConfirm']
-  const useEnumStore: typeof import('../src/stores/enum')['useEnumStore']
   const useI18n: typeof import('vue-i18n')['useI18n']
   const useLink: typeof import('vue-router')['useLink']
-  const useQuery: typeof import('../src/hooks/use-query/index')['useQuery']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']

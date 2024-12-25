@@ -2,10 +2,13 @@
   "name": "@lightsoft/web-components-vue3",
   "version": "1.0.1",
   "type": "module",
-  "main": "index.js",
+  "main": "./web-components-vue3/index.js",
   "author": "konbai",
   "license": "ISC",
   "description": "",
+  "files": [
+    "web-components-vue3"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

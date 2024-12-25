@@ -85,6 +85,25 @@ export default defineConfig(({ mode }) => {
             }),
         ],
 
+        build: {
+            outDir: 'web-components-vue3', //输出文件名称
+            lib: {
+                entry: './src/components/index.ts', //指定组件编译入口文件
+                name: 'webComponentsVue3',
+                fileName: 'index',
+            }, //库编译模式配置
+            rollupOptions: {
+                // 确保外部化处理那些你不想打包进库的依赖
+                external: ['vue'],
+                output: {
+                    // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+                    globals: {
+                        vue: 'Vue',
+                    },
+                },
+            },
+        },
+
         resolve: {
             alias: {
                 '@': fileURLToPath(new URL('./src', import.meta.url))
