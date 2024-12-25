@@ -62,7 +62,7 @@ const router = createRouter({
 
         {
             path: '/auth-redirect',
-            component: () => import('@/components/zs-auth-redirect/index.vue')
+            component: () => import('@/components/zs-auth-redirect/zs-auth-redirect.vue')
         }
     ]
 })
