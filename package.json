@@ -1,5 +1,5 @@
 {
-  "name": "@web-components-vue3/web-components-vue3",
+  "name": "@lightsoft/web-components-vue3",
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
