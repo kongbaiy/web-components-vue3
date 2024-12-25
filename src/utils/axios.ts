@@ -16,13 +16,6 @@ const api = axios.create({
 
 api.interceptors.request.use(
     (config) => {
-        const authInfo = getAccessToken() || {};
-
-        if (Reflect.ownKeys(authInfo).length) {
-            config.headers.authorization = authInfo.authorization
-            config.headers.sessionId = authInfo.sessionId
-        }
-
         return config
     },
     (error) => {
@@ -38,30 +31,8 @@ api.interceptors.response.use(
         const t = i18n?.global?.t as ComposerTranslation
         const authInfo = getAccessToken()
 
-        if (res.code === 200) {
-            // 判断是否返回默认的响应数据
-            return defaultResponse ? response : res
-        }
+        return defaultResponse ? response : res
 
-        // 处理token失效或者异地登录
-        if ([11020, 11021].includes(res.code)) {
-            if (!alertInit) {
-                alertInit = true
-                ElMessageBox.alert(res.msg, t('notice.title[1]'), {
-                    confirmButtonText: t('reLogin'),
-                    showClose: false,
-                    type: 'warning',
-                }).then(() => {
-                    alertInit = false
-                    location.href = authInfo.logoutUrl
-                })
-
-            }
-            return Promise.reject(res)
-        }
-
-        ElMessage.error(`【${res.code}】${res.msg} ` || t('notice.unknownError'))
-        return Promise.reject(res)
     },
 
     (error: AxiosError) => {

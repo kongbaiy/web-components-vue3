@@ -1,13 +1,13 @@
 <template>
     <el-dropdown class="cursor-pointer">
         <div class="flex-v-center outline-none">
-            <img :src="userInfo.avatar" class="avatar" />
-            <span class="m-x-8px text-base">{{ userInfo?.name }}</span>
+            <img :src="avatar" class="avatar" />
+            <span class="m-x-8px text-base">{{ name }}</span>
             <ep-caret-bottom />
         </div>
         <template #dropdown>
             <el-dropdown-menu>
-                <el-dropdown-item @click="sendLogout">
+                <el-dropdown-item @click="emits('logout')">
                     {{ $t('logout') }}
                 </el-dropdown-item>
             </el-dropdown-menu>
@@ -16,35 +16,18 @@
 </template>
 
 <script lang="ts" setup>
-import { getDomainName, getUserInfo, logout } from '@/api'
-import { removeAccessToken, setAccessToken, getAccessToken } from '@/utils'
+import defaultAvatar from '@/assets/images/icon/default_avatar.png';
 
-import defaultAvatar from '@/assets/images/default_avatar.png'
+interface IUserInfo {
+    name?: string;
+    avatar?: string;
+}
 
-const userInfo = reactive({
-    avatar: '',
-    name: ''
+withDefaults(defineProps<IUserInfo>(), {
+    name: 'adc',
+    avatar: defaultAvatar,
 })
-
-sendGetUserInfo()
-
-async function sendGetUserInfo() {
-    const { data } = await getUserInfo()
-    const {
-        data: { domainName }
-    } = await getDomainName()
-
-    setAccessToken({ ...getAccessToken(), domainName, logoutUrl: data.logoutUrl })
-    userInfo.avatar = data.avatar || defaultAvatar
-    userInfo.name = data.name
-}
-
-async function sendLogout() {
-    const { data } = await logout()
-
-    removeAccessToken()
-    window.location.href = data.logoutUrl
-}
+const emits = defineEmits(['logout']);
 </script>
 
 <style lang="scss" scoped>

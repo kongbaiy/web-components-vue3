@@ -2,7 +2,8 @@ export default {
     system: {
         title: '',
         route: {
-
+            demo: 'Demo',
+            demoIndex: 'Demo Index',
         },
 
     },

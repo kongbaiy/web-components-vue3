@@ -1,13 +1,51 @@
 {
-    "cSpell.words": [
-        "konbai",
-        "lightsoft",
-        "pinia",
-        "unocss",
-        "wechat"
-    ],
-    "i18n-ally.localesPaths": [
-        "src/locales",
-        "src/locales/lang"
-    ]
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  "cSpell.words": [
+    "applethandle",
+    "authed",
+    "childs",
+    "daterange",
+    "Datetime",
+    "iccid",
+    "iconify",
+    "intlify",
+    "jsmind",
+    "Lightsoft",
+    "moveup",
+    "nightwatch",
+    "njsproj",
+    "nssp",
+    "ntvs",
+    "Pinia",
+    "prefixs",
+    "preinstall",
+    "punit",
+    "shotnap",
+    "unocss",
+    "Upselect",
+    "usci",
+    "VITE",
+    "wechat"
+  ],
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "i18n-ally.localesPaths": ["src/locales/lang"],
+  "i18n-ally.enabledParsers": ["ts", "js", "json"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.namespace": false,
+  "i18n-ally.sourceLanguage": "zh-hans",
+  "i18n-ally.displayLanguage": "zh-hans",
+  "i18n-ally.enabledFrameworks": ["vue", "react"],
+  "i18n-ally.encoding": "utf-8",
+  "vue.server.hybridMode": true // 翻译文件的编码
 }
