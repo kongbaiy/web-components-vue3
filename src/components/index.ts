@@ -2,7 +2,7 @@ import { defineAsyncComponent } from 'vue';
 
 import zsAuthRedirect from './zs-auth-redirect/zs-auth-redirect.vue';
 import zsBreadcrumb from './zs-breadcrumb/zs-breadcrumb.vue';
-import zsDialog from './zs-dialog/zs-zs-dialog.vue';
+import zsDialog from './zs-dialog/zs-dialog.vue';
 import zsEmpty from './zs-empty/zs-empty.vue';
 import zsFormLayout from './zs-form-layout/zs-form-layout.vue';
 import zsHeaderUser from './zs-layout/zs-layout.vue';
