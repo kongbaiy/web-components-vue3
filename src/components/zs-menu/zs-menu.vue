@@ -37,9 +37,8 @@ const props = defineProps<IProps>()
 const router = useRouter()
 const route = useRoute()
 
-console.log('router:', router);
-const menus: any[] = router?.options?.routes?.filter((menu) => {
-    if (menu?.meta?.[props.menuKey]) return menu
+const menus: any[] = router.options.routes.filter((menu) => {
+    if (menu.meta?.[props.menuKey]) return menu
     return void 0
 })
 
