@@ -39,7 +39,7 @@ const route = useRoute()
 
 console.log('router:', router);
 const menus: any[] = router?.options?.routes?.filter((menu) => {
-    if (menu.meta?.[props.menuKey]) return menu
+    if (menu?.meta?.[props.menuKey]) return menu
     return void 0
 })
 
