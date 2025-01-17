@@ -20,8 +20,8 @@
 import defaultAvatar from '@/assets/images/icon/default_avatar.png';
 
 interface IUserInfo {
-    name?: string;
-    avatar?: string;
+    name?: string
+    avatar?: string
 }
 
 withDefaults(defineProps<IUserInfo>(), {
