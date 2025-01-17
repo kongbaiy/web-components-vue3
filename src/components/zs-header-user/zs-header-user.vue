@@ -10,6 +10,7 @@
                 <el-dropdown-item @click="emits('logout')">
                     {{ $t('logout') }}
                 </el-dropdown-item>
+                <slot name="dropdown"></slot>
             </el-dropdown-menu>
         </template>
     </el-dropdown>
