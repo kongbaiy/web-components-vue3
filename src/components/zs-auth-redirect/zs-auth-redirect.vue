@@ -9,9 +9,9 @@ const router = useRouter()
 const route = useRoute()
 
 const loading = ref(true)
+console.log('route: ', route)
 
 onBeforeMount(() => {
-    console.log('route: ', route)
 
     const { authorization, sessionId } = route.query
     const token = {
