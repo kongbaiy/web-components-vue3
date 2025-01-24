@@ -17,7 +17,7 @@ onBeforeMount(() => {
     sessionId: decodeURIComponent(sessionId as unknown as string)
   }
 
-  setAccessToken(token)
+  setAccessToken(JSON.stringify(token))
   router.push('/')
 })
 
