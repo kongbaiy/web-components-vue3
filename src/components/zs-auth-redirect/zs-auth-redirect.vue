@@ -4,12 +4,13 @@
 
 <script lang="ts" setup>
 import { setAccessToken } from '@/utils'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
 
 const loading = ref(true)
-console.log('route: ', route)
+console.log('route2: ', route)
 
 onBeforeMount(() => {
 
