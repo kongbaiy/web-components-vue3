@@ -1,5 +1,5 @@
 <template>
-  <div v-loading="loading" class="h-screen" />
+    <div v-loading="loading" class="h-screen" />
 </template>
 
 <script lang="ts" setup>
@@ -11,17 +11,19 @@ const route = useRoute()
 const loading = ref(true)
 
 onBeforeMount(() => {
-  const { authorization, sessionId } = route.query
-  const token = {
-    authorization: decodeURIComponent(authorization as unknown as string),
-    sessionId: decodeURIComponent(sessionId as unknown as string)
-  }
+    console.log('route: ', route)
 
-  setAccessToken(JSON.stringify(token))
-  router.push('/')
+    const { authorization, sessionId } = route.query
+    const token = {
+        authorization: decodeURIComponent(authorization as unknown as string),
+        sessionId: decodeURIComponent(sessionId as unknown as string)
+    }
+
+    setAccessToken(JSON.stringify(token))
+    router.push('/')
 })
 
 onUnmounted(() => {
-  loading.value = false
+    loading.value = false
 })
 </script>
