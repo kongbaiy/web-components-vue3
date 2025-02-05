@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { t } from '@/locales'
 
+import { zsAuthRedirect } from '../../dist'
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     // 是否应该禁止尾部斜杠。默认为假
@@ -62,7 +64,7 @@ const router = createRouter({
 
         {
             path: '/auth-redirect',
-            component: () => import('@/components/zs-auth-redirect/zs-auth-redirect.vue')
+            component: () => zsAuthRedirect
         }
     ]
 })

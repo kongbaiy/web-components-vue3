@@ -10,10 +10,8 @@ const router = useRouter()
 const route = useRoute()
 
 const loading = ref(true)
-console.log('route2: ', route)
 
 onBeforeMount(() => {
-
     const { authorization, sessionId } = route.query
     const token = {
         authorization: decodeURIComponent(authorization as unknown as string),
