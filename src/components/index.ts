@@ -1,5 +1,9 @@
 import { defineAsyncComponent } from 'vue';
 
+import 'virtual:uno.css'
+import '@/assets/scss/reset.scss'
+import '@/assets/scss/element-plus.scss'
+
 import zsAuthRedirect from './zs-auth-redirect/zs-auth-redirect.vue';
 import zsBreadcrumb from './zs-breadcrumb/zs-breadcrumb.vue';
 import zsDialog from './zs-dialog/zs-dialog.vue';
