@@ -40,30 +40,23 @@ export function objectArrayToString(
     return newObj
 }
 
-
-
 /**
- * 获取用户访问令牌
- * @param platform 平台，默认为 h5
- * @return object
+ * 设置用户访问令牌
  */
-export function getAccessToken() {
-    const info = sessionStorage.getItem(ACCESS_TOKEN_KEY)
-    return info ? JSON.parse(info) : null
+export function setAccessToken(value: any) {
+    sessionStorage.setItem(ACCESS_TOKEN_KEY, JSON.stringify(value))
 }
 
 /**
- * 设置用户访问令牌
- * @param info 令牌信息
- * @param platform 平台，默认为 h5
+ * 获取用户访问令牌
  */
-export function setAccessToken(info: any) {
-    sessionStorage.setItem(ACCESS_TOKEN_KEY, JSON.stringify(info))
+export function getAccessToken() {
+    const token = sessionStorage.getItem(ACCESS_TOKEN_KEY)
+    return token ? JSON.parse(token) : null
 }
 
 /**
  * 清除用户访问令牌
- * @param platform 平台，默认为 h5
  */
 export function removeAccessToken() {
     sessionStorage.removeItem(ACCESS_TOKEN_KEY)
@@ -126,10 +119,10 @@ export function debounce(fn: <T>(value: T) => void, delay: number) {
     let time: any = null
 
     return (value: string) => {
-      if (time !== null) clearTimeout(time)
+        if (time !== null) clearTimeout(time)
 
-      time = setTimeout(() => {
-        fn?.(value)
-      }, delay)
+        time = setTimeout(() => {
+            fn?.(value)
+        }, delay)
     }
-  }
+}
