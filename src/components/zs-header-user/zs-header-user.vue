@@ -25,7 +25,7 @@ interface IUserInfo {
 }
 
 withDefaults(defineProps<IUserInfo>(), {
-    name: 'adc',
+    name: 'nickname',
     avatar: defaultAvatar,
 })
 const emits = defineEmits(['logout']);
