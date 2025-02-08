@@ -5,14 +5,17 @@
             <span class="m-x-8px text-base">{{ name }}</span>
             <ep-caret-bottom />
         </div>
-        <template #dropdown>
+        <!-- <template #dropdown>
             <el-dropdown-menu>
                 <el-dropdown-item @click="emits('logout')">
                     {{ $t('logout') }}
                 </el-dropdown-item>
                 <slot name="dropdown-item"></slot>
             </el-dropdown-menu>
-        </template>
+        </template> -->
+        <slot></slot>
+
+        <slot name="dropdown"></slot>
     </el-dropdown>
 </template>
 
