@@ -1,13 +1,18 @@
 .el-tooltip__trigger:focus-visible {
-  outline: unset;
+    outline: unset;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
 .el-form--inline .el-input {
-  --el-input-width: 300px;
+    --el-input-width: 300px;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
 .el-form--inline .el-select {
-  --el-select-width: 300px;
+    --el-select-width: 300px;
+}
+
+/* 处理 dropdown aria-hidden on an element because its descendant retained focus... */
+.el-dropdown__popper[aria-hidden="true"] {
+    display: none !important;
 }
