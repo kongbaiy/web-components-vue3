@@ -19,7 +19,6 @@
 
 <script lang="ts" setup>
 import defaultAvatar from '@/assets/images/icon/default_avatar.png'
-import { el } from 'element-plus/es/locale'
 
 interface IDropdownItem {
     text: string
