@@ -91,6 +91,7 @@ export default defineConfig(({ mode }) => {
                 entry: './src/components/index.ts', //指定组件编译入口文件
                 name: 'webComponentsVue3',
                 fileName: 'index',
+                // formats: ['es']
             }, //库编译模式配置
             rollupOptions: {
                 // 确保外部化处理那些你不想打包进库的依赖
@@ -101,6 +102,11 @@ export default defineConfig(({ mode }) => {
                         vue: 'Vue',
                         'vue-router': 'VueRouter',
                     },
+                    // 文件名格式（保留原始文件名）
+                    entryFileNames: '[name].js',
+                    chunkFileNames: '[name].js',
+                    // assetFileNames: '[name].[ext]',
+                    preserveModulesRoot: 'src',
                 },
             },
         },
