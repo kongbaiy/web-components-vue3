@@ -6,6 +6,13 @@
   "author": "konbai",
   "license": "ISC",
   "description": "",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "index.d.ts"
@@ -13,6 +20,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:tsc": "vite build && vue-tsc --emitDeclarationOnly",
     "tsc-build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -65,8 +73,9 @@
     "unplugin-icons": "^0.19.2",
     "unplugin-vue-components": "^0.27.3",
     "vite": "^5.3.1",
+    "vite-plugin-dts": "^4.5.3",
     "vite-plugin-vue-devtools": "^7.3.1",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "^2.0.29"
   }
 }

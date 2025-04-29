@@ -17,6 +17,7 @@ import Components from "unplugin-vue-components/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import ElementPlus from "unplugin-element-plus/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import dts from 'vite-plugin-dts'
 
 
 // https://vitejs.dev/config/
@@ -26,6 +27,12 @@ export default defineConfig(({ mode }) => {
     return {
         plugins: [
             vue(),
+            dts({
+                include: ['src/components'],  // 指定要生成声明的目录
+                outDir: 'dist/types',         // 声明文件输出目录
+                staticImport: true,           // 将静态导入转换为 ES 模块
+                insertTypesEntry: true       // 生成 types 入口
+            }),
             vueJsx(),
             vueDevTools(),
             UnoCss({
@@ -91,7 +98,7 @@ export default defineConfig(({ mode }) => {
                 entry: './src/components/index.ts', //指定组件编译入口文件
                 name: 'webComponentsVue3',
                 fileName: 'index',
-                // formats: ['es']
+                formats: ['es'],   // 输出 ES 模块格式
             }, //库编译模式配置
             rollupOptions: {
                 // 确保外部化处理那些你不想打包进库的依赖
@@ -105,7 +112,6 @@ export default defineConfig(({ mode }) => {
                     // 文件名格式（保留原始文件名）
                     entryFileNames: '[name].js',
                     chunkFileNames: '[name].js',
-                    // assetFileNames: '[name].[ext]',
                     preserveModulesRoot: 'src',
                 },
             },

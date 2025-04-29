@@ -12,6 +12,11 @@
     }
   ],
   "compilerOptions": {
+    "declaration": true, // 生成声明文件
+    "declarationDir": "dist/types", // 声明输出目录
+    "emitDeclarationOnly": true, // 仅生成声明
+    "rootDir": "src", // 源码根目录
+    "types": ["vite/client", "vue"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
