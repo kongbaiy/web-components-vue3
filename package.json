@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:tsc": "vite build && vue-tsc --emitDeclarationOnly",
+    "build:tsc-edo": "vite build && vue-tsc --emitDeclarationOnly",
     "tsc-build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
