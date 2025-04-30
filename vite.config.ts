@@ -31,7 +31,19 @@ export default defineConfig(({ mode }) => {
                 include: ['src/components'],  // 指定要生成声明的目录
                 outDir: 'dist/types',         // 声明文件输出目录
                 staticImport: true,           // 将静态导入转换为 ES 模块
-                insertTypesEntry: true       // 生成 types 入口
+                insertTypesEntry: true,       // 生成 types 入口
+                // tsconfigPath: './tsconfig.json',    // 指定 tsconfig.json 文件路径
+                // bundledPackages: ['your-lib']
+                beforeWriteFile: (filePath, content) => {
+                    console.log('filePath：', filePath);
+                    if (filePath.endsWith('/types/index.d.ts')) {
+                        return {
+                            filePath: filePath.replace('index.d.ts', 'components.d.ts'),
+                            content
+                        }
+                    }
+                    return { filePath, content }
+                }
             }),
             vueJsx(),
             vueDevTools(),
