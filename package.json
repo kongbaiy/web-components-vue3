@@ -7,12 +7,6 @@
   "license": "ISC",
   "description": "",
   "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
   "files": [
     "dist",
     "index.d.ts"
