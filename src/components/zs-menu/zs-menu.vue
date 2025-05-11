@@ -76,14 +76,14 @@ function getRouterLinkToPath(paths: string[]) {
     return paths.join('/')
 }
 
-function getIcon(path: string) {
+function getIcon(path: string | (() => any)) {
     if (typeof path === 'string' && path?.startsWith('ep-')) {
         const iconName = toCamelCase(path.replace('ep-', ''));
 
         return ElementPlusIcons[iconName]
     }
 
-    return path
+    return typeof path === 'function' ? path() : path
 }
 
 function toCamelCase(str: string) {
