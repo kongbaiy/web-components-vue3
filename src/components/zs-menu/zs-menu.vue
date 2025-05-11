@@ -3,7 +3,8 @@
         <template v-for="m in menus" :key="m.path">
             <el-sub-menu v-if="m.children" :index="m.path" :class="{ 'hidden-icon': m.meta.hideArrow }">
                 <template #title>
-                    <div v-if="!m.meta.hideMenu" class="w-full" @click="handleSubMenu($event, m.redirect)">
+                    <div v-if="!m.meta.hideMenu" class="flex items-center w-full"
+                        @click="handleSubMenu($event, m.redirect)">
                         <el-icon v-if="m.meta?.icon">
                             <component :is="getIcon(m.meta.icon)"></component>
                         </el-icon>
