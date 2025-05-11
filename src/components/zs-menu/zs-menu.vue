@@ -4,7 +4,9 @@
             <el-sub-menu v-if="m.children" :index="m.path" :class="{ 'hidden-icon': m.meta.hideArrow }">
                 <template #title>
                     <div v-if="!m.meta.hideMenu" class="w-full" @click="handleSubMenu($event, m.redirect)">
-                        <el-icon v-if="m.meta?.icon" :icon="m.meta.icon" />
+                        <el-icon v-if="m.meta?.icon">
+                            <component :is="getIcon(m.meta.icon)"></component>
+                        </el-icon>
                         <span> {{ $t(m.meta.title) }} </span>
                     </div>
                 </template>
@@ -28,6 +30,8 @@
 </template>
 
 <script lang="ts" setup>
+import * as ElementPlusIcons from '@element-plus/icons-vue'
+
 interface IProps {
     menuKey: string
 }
@@ -70,6 +74,23 @@ function setParentRoutePath(path: string) {
 function getRouterLinkToPath(paths: string[]) {
     return paths.join('/')
 }
+
+function getIcon(path: string) {
+    if (typeof path === 'string' && path?.startsWith('ep-')) {
+        const iconName = toCamelCase(path.replace('ep-', ''));
+
+        return ElementPlusIcons[iconName]
+    }
+
+    return path
+}
+
+function toCamelCase(str: string) {
+    return str.split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join('');
+}
+
 </script>
 
 <style lang="scss" scoped>

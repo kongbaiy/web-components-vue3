@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { t } from '@/locales'
 
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     // 是否应该禁止尾部斜杠。默认为假
@@ -17,6 +18,7 @@ const router = createRouter({
             redirect: '/demo/index',
             component: () => import('@/layout/default.vue'),
             meta: {
+                icon: 'ep-add-location',
                 auth: true,
                 title: t('system.route.demo'),
                 menuId: 'demoRoot',
