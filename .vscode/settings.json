@@ -28,6 +28,7 @@
     "Pinia",
     "prefixs",
     "preinstall",
+    "preminor",
     "punit",
     "shotnap",
     "unocss",
