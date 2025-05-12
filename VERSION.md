@@ -71,3 +71,20 @@
 2. npm publish --tag [标识] - 发布版本且添加标识
 3. npm publish --access [访问权限] - 发布版本且添加访问权限
 4. npm publish --access [访问权限] --tag [标识] - 发布版本且添加访问权限且添加标识
+
+## 废弃版本
+
+1. npm deprecate [包名] [版本号] [原因] - 废弃版本
+2. npm deprecate [包名] [版本号] [原因] --tag [标识] - 废弃版本且添加标识
+3. npm deprecate [包名] [版本号] [原因] --access [访问权限] - 废弃版本且添加访问权限
+4. npm deprecate [包名] [版本号] [原因] --access [访问权限] --tag [标识] - 废弃版本且添加访问权限且添加标识
+
+## 回滚版本
+
+1. npm version [版本号] --no-git-tag-version --no-commit-hooks --force --no-git-add --no-push --no-verify --no-sign-git-tag --no-verify-access - 强制发布版本且不添加到 git 且不推送且不验证且不签名 git tag 且不验证访问权限
+
+## 参考资料
+
+1. [npm version](URL\_## 参考资料
+
+1. [npm version](URL_ADDRESS.1. [npm version](https://docs.npmjs.com/cli/v10/commands/npm-version)
