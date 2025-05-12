@@ -85,6 +85,4 @@
 
 ## 参考资料
 
-1. [npm version](URL\_## 参考资料
-
-1. [npm version](URL_ADDRESS.1. [npm version](https://docs.npmjs.com/cli/v10/commands/npm-version)
+1. [npm version][npm version](https://docs.npmjs.com/cli/v10/commands/npm-version)
