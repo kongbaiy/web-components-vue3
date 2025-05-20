@@ -1,8 +1,12 @@
 import { defineAsyncComponent } from 'vue';
 
-import 'virtual:uno.css'
-import '@/assets/scss/reset.scss'
-import '@/assets/scss/element-plus.scss'
+import ElementPlus from 'element-plus';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
+import en from 'element-plus/es/locale/lang/en';
+
+import 'virtual:uno.css';
+import '@/assets/scss/reset.scss';
+import '@/assets/scss/element-plus.scss';
 
 import zsAuthRedirect from './zs-auth-redirect/zs-auth-redirect.vue';
 import zsBreadcrumb from './zs-breadcrumb/zs-breadcrumb.vue';
@@ -18,7 +22,6 @@ import zsSliderVerify from './zs-slider-verify/zs-slider-verify.vue';
 import zsSplitContainer from './zs-split-container/zs-split-container.vue';
 import zsTable from './zs-table/zs-table.vue';
 import zsTitle from './zs-title/zs-title.vue';
-
 
 export {
     zsAuthRedirect,
@@ -37,14 +40,26 @@ export {
     zsTitle
 }
 
+type TLocaleType = 'zh-cn' | 'en';
 
 const components = import.meta.glob('./zs-*/*.vue');
-const registerGlobalComponent = (app: { component: (arg0: string, arg1: globalThis.Component) => void; }, prefix: string = 'zs') => {
+const localesMap = {
+    'zh-cn': zhCn,
+    'en': en,
+}
+const registerGlobalComponent = (app: { component: (arg0: string, arg1: globalThis.Component) => void, use: (...args: any) => void }, prefix: string = 'zs', localeType?: TLocaleType) => {
+    if (localeType && localesMap[localeType]) {
+        app.use(ElementPlus, {
+            locale: localesMap[localeType],
+        })
+    }
+
     for (const [key, value] of Object.entries(components)) {
         const name = key.slice(key.lastIndexOf('/') + 1, key.lastIndexOf('.'));
 
         app.component(name.replace('zs', prefix), defineAsyncComponent(value as any));
     }
-};
+
+}
 
 export default registerGlobalComponent;

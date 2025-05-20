@@ -35,7 +35,6 @@ export default defineConfig(({ mode }) => {
                 // tsconfigPath: './tsconfig.json',    // 指定 tsconfig.json 文件路径
                 // bundledPackages: ['your-lib']
                 beforeWriteFile: (filePath, content) => {
-                    console.log('filePath：', filePath);
                     if (filePath.endsWith('/types/index.d.ts')) {
                         return {
                             filePath: filePath.replace('index.d.ts', 'components.d.ts'),
